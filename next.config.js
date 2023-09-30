@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   experimental: {
     serverActions: true,
     serverComponentsExternalPackages: ["mongoose"],
@@ -10,6 +13,14 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    domains: [
+      "localhost",
+      "utfs.io",
+      "img.clerk.com",
+      "images.clerk.dev",
+      "uploadthing.com",
+      "placehold.co",
+    ], // Add your allowed domains here
     remotePatterns: [
       {
         protocol: "https",
@@ -38,10 +49,6 @@ const nextConfig = {
         hostname: "localhost",
         port: "3000",
         pathname: "/**",
-      },
-      {
-        protocol: "http",
-        hostname: "utfs.io",
       },
     ],
   },

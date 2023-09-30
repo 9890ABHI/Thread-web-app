@@ -160,3 +160,14 @@ export async function getActivity(userId: string) {
     throw new Error(`Failed to fetch activity : ${error.message}`);
   }
 }
+
+export async function fetchSuggestUser(numberOfUser: number) {
+  try {
+    connectToDB();
+
+    const user = await User;
+    return user;
+  } catch (error: any) {
+    throw new Error(`Failed to fetch Suggested user : ${error.message}`);
+  }
+}

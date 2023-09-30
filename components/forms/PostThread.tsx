@@ -59,11 +59,15 @@ function PostThread({ userId }: Props) {
             name="thread"
             render={({ field }) => (
               <FormItem className="flex flex-col gap-4 w-full">
-                <FormLabel className="text-base-semibold text-light-2">
+                <FormLabel className="text-body-bold text-light-1">
                   Content
                 </FormLabel>
                 <FormControl className="no-focus border border-dark-4 bg-dark-3 text-light-1">
-                  <Textarea rows={15} {...field} />
+                  <Textarea
+                    rows={10}
+                    {...field}
+                    placeholder="write something ... "
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

@@ -40,7 +40,9 @@ const ThreadCard = ({
     <>
       <article
         className={`flex w-full flex-col rounded-xl ${
-          isComment ? "px-0 xs:px-7 " : " bg-dark-2 p-7"
+          isComment
+            ? "px-2 xs:px-7  "
+            : " bg-[#1a1b20] hover:bg-[#26282bdc] p-7"
         }`}
       >
         <div className="flex items-start justify-between">
@@ -64,7 +66,7 @@ const ThreadCard = ({
             "
             >
               <Link href={`/profile/${author?.id}`} className="w-fit">
-                <h4 className="cursor-pointer text-base-semibold text-light-1">
+                <h4 className="cursor-pointer text-base-semibold text-light-1 capitalize">
                   {author?.name}
                 </h4>
               </Link>
@@ -81,7 +83,7 @@ const ThreadCard = ({
                     alt="heart"
                     width={24}
                     height={24}
-                    className="cursor-pointer object-contain"
+                    className="cursor-pointer object-contain hover:scale-150"
                   />
                   <Link href={`/thread/${id}`}>
                     <Image
@@ -89,7 +91,7 @@ const ThreadCard = ({
                       alt="reply"
                       width={24}
                       height={24}
-                      className="cursor-pointer object-contain"
+                      className="cursor-pointer object-contain hover:scale-150"
                     />
                   </Link>
                   <Image
@@ -97,25 +99,28 @@ const ThreadCard = ({
                     alt="repost"
                     width={24}
                     height={24}
-                    className="cursor-pointer object-contain"
+                    className="cursor-pointer object-contain hover:scale-150"
                   />
                   <Image
                     src={"/assets/share.svg"}
                     alt="share"
                     width={24}
                     height={24}
-                    className="cursor-pointer object-contain"
+                    className="cursor-pointer object-contain hover:scale-150"
                   />
                 </div>
                 {isComment && comments.length > 0 && (
                   <>
-                    <Link href={`/thread/${id}`}>
-                      <p className="mt-1 text-subtle-medium text-gary-1">
-                        {comments.length} replies
-                      </p>
-                    </Link>
+                    <p className="mt-1 text-subtle-medium text-gray-1">
+                      is thre something
+                    </p>
                   </>
                 )}
+                <Link href={`/thread/${id}`}>
+                  <p className="mt-1 text-subtle-medium text-gray-1">
+                    {comments.length} replies
+                  </p>
+                </Link>
               </div>
             </div>
           </div>
