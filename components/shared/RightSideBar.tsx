@@ -1,12 +1,14 @@
-import { fetchSuggestUser } from "@/lib/actions/user.actions";
+// import { currentUser } from "@clerk/nextjs";
 
-const RightSideBar = () => {
-  const users = fetchSuggestUser(10);
-  console.log("Suggested users", users);
+const RightSideBar = async () => {
+  // const user = await currentUser();
+  // if (!user) return null;
+  // const users = fetchUsers({ userId: user.id, pageSize: 4 });
+  // console.log("Suggested users", users);
 
   return (
     <>
-      {/* <section className="custom-scrollbar rightsidebar">
+      <section className="custom-scrollbar rightsidebar">
         <div className="flex flex-1 flex-col justify-start">
           <h3 className="text-heading4-medium text-light-1">
             Suggested Communities
@@ -15,7 +17,7 @@ const RightSideBar = () => {
         <div className="flex flex-1 flex-col justify-start">
           <h3 className="text-heading4-medium text-light-1">Suggested Users</h3>
         </div>
-      </section> */}
+      </section>
     </>
   );
 };

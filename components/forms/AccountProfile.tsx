@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { UserValidation } from "@/lib/validation/user";
+import { UserValidation } from "@/lib/validations/user";
 
 import { Button } from "@/components/ui/button";
 import {

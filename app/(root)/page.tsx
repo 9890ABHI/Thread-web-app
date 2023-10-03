@@ -22,6 +22,7 @@ export default async function Home() {
           <>
             {results.posts.map((post, i) => (
               <>
+                {console.log("community from root dir : ", post.community)}
                 <ThreadCard
                   key={i}
                   id={post._id}

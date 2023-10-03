@@ -12,15 +12,16 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  // images: {
+  // domains: [
+  //   "localhost",
+  //   "utfs.io",
+  //   "img.clerk.com",
+  //   "images.clerk.dev",
+  //   "uploadthing.com",
+  //   "placehold.co",
+  // ], // Add your allowed domains here
   images: {
-    domains: [
-      "localhost",
-      "utfs.io",
-      "img.clerk.com",
-      "images.clerk.dev",
-      "uploadthing.com",
-      "placehold.co",
-    ], // Add your allowed domains here
     remotePatterns: [
       {
         protocol: "https",
@@ -37,18 +38,6 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "placehold.co",
-      },
-      {
-        protocol: "https",
-        hostname: "placeimg.com",
-        port: "",
-        pathname: "/720/480/**",
-      },
-      {
-        protocol: "http",
-        hostname: "localhost",
-        port: "3000",
-        pathname: "/**",
       },
     ],
   },

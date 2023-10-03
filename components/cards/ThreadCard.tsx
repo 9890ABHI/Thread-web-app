@@ -1,3 +1,4 @@
+import { formatDateString } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -36,6 +37,7 @@ const ThreadCard = ({
   comments,
   isComment,
 }: Props) => {
+  // console.log("Community", community);
   return (
     <>
       <article
@@ -111,20 +113,39 @@ const ThreadCard = ({
                 </div>
                 {isComment && comments.length > 0 && (
                   <>
-                    <p className="mt-1 text-subtle-medium text-gray-1">
-                      is thre something
-                    </p>
+                    <Link href={`/thread/${id}`}>
+                      <p className="mt-1 text-subtle-medium text-gray-1">
+                        {comments.length} replies
+                      </p>
+                    </Link>
                   </>
                 )}
-                <Link href={`/thread/${id}`}>
-                  <p className="mt-1 text-subtle-medium text-gray-1">
-                    {comments.length} replies
-                  </p>
-                </Link>
               </div>
             </div>
           </div>
+          {/* todo  delete thread */}
+          {/* todo  comments logo */}
         </div>
+        {/* {console.log("Community", community)} */}
+        {!isComment && community && (
+          <>
+            <Link
+              href={`/communities/${community.id}`}
+              className="mt-5 flex items-center"
+            >
+              <p className="text-subtle-medium text-gray-1">
+                {formatDateString(createdAt)} - {community.name} Community
+              </p>
+              <Image
+                src={community.image}
+                alt=""
+                width={14}
+                height={14}
+                className="ml-1 rounded-full object-cover"
+              />
+            </Link>
+          </>
+        )}
       </article>
     </>
   );
